@@ -1,0 +1,27 @@
+{
+  "sessionId": "ecd9329d-98c0-44e8-8e99-64a16e8d3694",
+  "capabilities": {
+    "acceptInsecureCerts": false,
+    "browserName": "firefox",
+    "browserVersion": "126.0.1",
+    "moz:accessibilityChecks": false,
+    "moz:buildID": "20240526221752",
+    "moz:geckodriverVersion": "0.34.0",
+    "moz:headless": false,
+    "moz:platformVersion": "10.0",
+    "moz:processID": 15852,
+    "moz:profile": "C:\\Users\\fabia\\AppData\\Local\\Temp\\rust_mozprofileArGchh",
+    "moz:shutdownTimeout": 60000,
+    "moz:webdriverClick": true,
+    "moz:windowless": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "windows",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": { "implicit": 0, "pageLoad": 300000, "script": 30000 },
+    "unhandledPromptBehavior": "dismiss and notify",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+    "wdio:driverPID": 26108
+  }
+}

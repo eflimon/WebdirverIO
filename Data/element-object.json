@@ -1,0 +1,35 @@
+{
+  "sessionId": "f39ca303-cabe-4bd7-82e6-10bf55637463",
+  "elementId": "360498fb-5a00-4dfa-aef0-88ba3f6f39c3",
+  "element-6066-11e4-a52e-4f735466cecf": "360498fb-5a00-4dfa-aef0-88ba3f6f39c3",
+  "selector": "#contact_reply > h1",
+  "parent": {
+    "sessionId": "f39ca303-cabe-4bd7-82e6-10bf55637463",
+    "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "firefox",
+      "browserVersion": "127.0",
+      "moz:accessibilityChecks": false,
+      "moz:buildID": "20240606181944",
+      "moz:geckodriverVersion": "0.34.0",
+      "moz:headless": false,
+      "moz:platformVersion": "10.0",
+      "moz:processID": 29584,
+      "moz:profile": "C:\\Users\\fabia\\AppData\\Local\\Temp\\rust_mozprofilecoUSN0",
+      "moz:shutdownTimeout": 60000,
+      "moz:webdriverClick": true,
+      "moz:windowless": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {},
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": { "implicit": 0, "pageLoad": 300000, "script": 30000 },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0",
+      "wdio:driverPID": 21896
+    }
+  },
+  "isReactElement": false,
+  "isShadowElement": false
+}
