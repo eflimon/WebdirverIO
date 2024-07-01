@@ -1,8 +1,11 @@
+import homePage from "../../pageobjects/automation-test-store/home.page";
+
 describe('Add items to basket', () => {
 
     beforeEach(async () => {
         
-        await browser.url("https://automationteststore.com/");
+        //await browser.url("https://automationteststore.com/");
+        await homePage.open();
     });
 
     it("Add specific 'skincare produts' to basket and validate car total", async() => {
