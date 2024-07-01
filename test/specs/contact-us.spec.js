@@ -1,6 +1,7 @@
 import allureReporter from "@wdio/allure-reporter";
-//import ContactUsPage from "../pageobjects/webdriver-university/contact-us.page"
-//import contactUsPage from "../pageobjects/webdriver-university/contact-us.page";
+import ContactUsPage from "../pageobjects/webdriver-university/contact-us.page";
+import contactUsPage from "../pageobjects/webdriver-university/contact-us.page";
+
 
 describe('webdriveruniversity - contact us page', function() {
 
@@ -8,7 +9,8 @@ describe('webdriveruniversity - contact us page', function() {
 
     beforeEach(async () => {
 
-        await browser.url('/Contact-Us/contactus.html');
+        //await browser.url('/Contact-Us/contactus.html');
+        await ContactUsPage.open();
         console.log(`>>Browser Object: + ${JSON.stringify(browser)}`);
 
     })
@@ -22,28 +24,30 @@ describe('webdriveruniversity - contact us page', function() {
         allureReporter.addSeverity("critical");
 
         //first name
-        const firstName = await $('//*[@name="first_name"]');
+        //const firstName = await $('//*[@name="first_name"]');
         //last name
-        const lastName = await $('//*[@name="last_name"]');
+        //const lastName = await $('//*[@name="last_name"]');
         //email address
-        const emailAddress = await $('//*[@name="email"]');
+        //const emailAddress = await $('//*[@name="email"]');
         //message
-        const message = await $('//*[@name="message"]');
+        //const message = await $('//*[@name="message"]');
         //submit button
-        const submitButton = await $('//input[@value="SUBMIT"]');
+        //const submitButton = await $('//input[@value="SUBMIT"]');
 
-        await firstName.setValue("Joe");
-        await lastName.setValue("Blogs");
-        await emailAddress.setValue("joe_blogs@test.com");
-        await message.setValue("Hello world!!");
+        //await firstName.setValue("Joe");
+        //await lastName.setValue("Blogs");
+        //await emailAddress.setValue("joe_blogs@test.com");
+        //await message.setValue("Hello how are you?");
+
+        ContactUsPage.submitForm("Joe","Blogs","joe_blogs@test.com", "Hello how are you?");
 
         //await browser.debug();
-        await submitButton.click();
+        //await submitButton.click();
         //await browser.waitThenClick(submitButton);
 
-        const successfulSubmissionheader = $('#contact_reply > h1');
-        console.log(`successfulSubmissionHeader Element: ` + JSON.stringify(await successfulSubmissionheader));
-        await expect(successfulSubmissionheader).toHaveText('Thank You for your Message!');
+        //const successfulSubmissionheader = $('#contact_reply > h1');
+        //console.log(`successfulSubmissionHeader Element: ` + JSON.stringify(await successfulSubmissionheader));
+        await expect(ContactUsPage.successfulSubmissionheader).toHaveText('Thank You for your Message!');
 
         
         //jest assertion
@@ -59,27 +63,35 @@ describe('webdriveruniversity - contact us page', function() {
         allureReporter.addSeverity("normal");
         
         //first name
-        const firstName = await $('//*[@name="first_name"]');
+        //const firstName = await $('//*[@name="first_name"]');
 
         //last name
-        const lastName = await $('//*[@name="last_name"]');
+        //const lastName = await $('//*[@name="last_name"]');
 
         //message
-        const message = await $('//*[@name="message"]');
+        //const message = await $('//*[@name="message"]');
 
         //submit button
-        const submitButton = await $('//input[@value="SUBMIT"]');
+        //const submitButton = await $('//input[@value="SUBMIT"]');
 
-        await firstName.setValue("Jose");
-        await lastName.setValue("Perez");
-        await message.setValue('Hello World!!!');
-        await submitButton.click();
+        //await firstName.setValue("Jose");
+        //await lastName.setValue("Perez");
+        //await message.setValue('Hello World!!!');
+        //await submitButton.click();
 
-        const sucessfulSubmissionHeader = $('body');
-        await expect(sucessfulSubmissionHeader).toHaveTextContaining(['Error: all fields are required',' Error: Invalid email address']);
+        ContactUsPage.submitForm("Joe","Blogs","", "Hello how are you?");
+
+        //const unsucessfulSubmissionHeader = $('body');
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveTextContaining(['Error: all fields are required',' Error: Invalid email address']);
 
 
     })
+
+    it('only type a first name', async () => {
+        ContactUsPage.submitForm("Joe");
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveTextContaining(['Error: all fields are required',' Error: Invalid email address']);
+        
+    });
 
 
 })
