@@ -1,6 +1,6 @@
 import allureReporter from "@wdio/allure-reporter";
-import ContactUsPage from "../pageobjects/webdriver-university/contact-us.page";
-import contactUsPage from "../pageobjects/webdriver-university/contact-us.page";
+import ContactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
+import contactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
 
 
 describe('webdriveruniversity - contact us page', function() {
