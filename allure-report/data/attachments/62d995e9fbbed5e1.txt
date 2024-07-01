@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//span[text()='Flat Shipping Rate:']/../following-sibling::td\"}\n  (Session info: chrome=126.0.6478.127)",
-  "stacktrace": "\tGetHandleVerifier [0x00007FF666DBEEC2+31554]\n\t(No symbol) [0x00007FF666D37EF9]\n\t(No symbol) [0x00007FF666BF872A]\n\t(No symbol) [0x00007FF666C48434]\n\t(No symbol) [0x00007FF666C4853C]\n\t(No symbol) [0x00007FF666C8F6A7]\n\t(No symbol) [0x00007FF666C6D06F]\n\t(No symbol) [0x00007FF666C8C977]\n\t(No symbol) [0x00007FF666C6CDD3]\n\t(No symbol) [0x00007FF666C3A33B]\n\t(No symbol) [0x00007FF666C3AED1]\n\tGetHandleVerifier [0x00007FF6670C8B5D+3217373]\n\tGetHandleVerifier [0x00007FF667115B23+3532707]\n\tGetHandleVerifier [0x00007FF66710B120+3489184]\n\tGetHandleVerifier [0x00007FF666E6E796+750614]\n\t(No symbol) [0x00007FF666D4377F]\n\t(No symbol) [0x00007FF666D3EB34]\n\t(No symbol) [0x00007FF666D3ECC2]\n\t(No symbol) [0x00007FF666D2E18F]\n\tBaseThreadInitThunk [0x00007FFE0F0D257D+29]\n\tRtlUserThreadStart [0x00007FFE0FBCAF28+40]\n"
-}

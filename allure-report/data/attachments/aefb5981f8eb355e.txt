@@ -1,3 +1,0 @@
-{
-  "text": "D:\\Documentos\\Automation\\webdriverio-framework\\Data\\dummy_file.txt"
-}

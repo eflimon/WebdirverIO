@@ -1,3 +1,0 @@
-{
-  "text": "joe_blogs@test.com"
-}
