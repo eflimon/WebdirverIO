@@ -1,5 +1,7 @@
 import BasePage from "./base.page";
-import ItemComponent from "../automation-test-store/components/item.comp"
+import ItemComponent from "../automation-test-store/components/item.comp";
+import HomePage from "../../pageobjects/automation-test-store/home.page";
+import CartPage from "../automation-test-store/cart.page"
 
 class SkinCarePage extends BasePage{
     get itemComponent(){
@@ -48,18 +50,22 @@ class SkinCarePage extends BasePage{
         formattedItemPrices.forEach(price => itemsTotal += parseFloat(price));
         console.log("Items total: " + itemsTotal);
 
-        await $("//span[text()='Cart']").click();
+
+        //await $("//span[text()='Cart']").click();
+        await HomePage.navigationMenuComponent.NavMenuLink('Cart').click();
         await expect(browser).toHaveUrlContaining("checkout");
 
         // //span[text()='Flat Shipping Rate:']/../following-sibling::td
-        var tempShippingRate = await $("//span[text()='Flat Shipping Rate:']/../following-sibling::td").getText();
+        //var tempShippingRate = await $("//span[text()='Flat Shipping Rate:']/../following-sibling::td").getText();
+        var tempShippingRate = await CartPage.shippingRate.getText();
         var shippingRate = tempShippingRate.replace('$','');
 
         itemsTotal = itemsTotal + parseFloat(shippingRate);
         console.log("Items total + shipping rate = " + itemsTotal);
 
         // extract cart total
-        var cartTotal = await $("//span[text()='Total:']/../following-sibling::td").getText();
+        //var cartTotal = await $("//span[text()='Total:']/../following-sibling::td").getText();
+        var cartTotal = await CartPage.total.getText();
         cartTotal = cartTotal.replace('$','');
 
         expect(itemsTotal).toEqual(parseFloat(cartTotal));

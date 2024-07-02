@@ -1,5 +1,6 @@
 import BasePage from "./base.page";
 import CategoryMenuComponent from "../automation-test-store/components/category-menu.comp";
+import NavigationMenuComponent from "../automation-test-store/components/nav-menu.comp";
 
 class HomePage extends BasePage{
     open(){
@@ -8,6 +9,10 @@ class HomePage extends BasePage{
 
     get categoryMenuComponent() {
         return CategoryMenuComponent;
+    }
+
+    get navigationMenuComponent(){
+        return NavigationMenuComponent;
     }
 }
 
