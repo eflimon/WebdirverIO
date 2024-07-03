@@ -14,7 +14,7 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it.only('Valid submission - submit all information', async function() {
+    it('Valid submission - submit all information', async function() {
 
         //this.retries(2);
 
