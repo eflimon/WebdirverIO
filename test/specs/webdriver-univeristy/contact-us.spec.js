@@ -1,6 +1,5 @@
 import allureReporter from "@wdio/allure-reporter";
 import ContactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
-import contactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
 
 
 describe('webdriveruniversity - contact us page', function() {
@@ -15,7 +14,7 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it('Valid submission - submit all information', async function() {
+    it.only('Valid submission - submit all information', async function() {
 
         //this.retries(2);
 
@@ -39,7 +38,8 @@ describe('webdriveruniversity - contact us page', function() {
         //await emailAddress.setValue("joe_blogs@test.com");
         //await message.setValue("Hello how are you?");
 
-        ContactUsPage.submitForm("Joe","Blogs","joe_blogs@test.com", "Hello how are you?");
+        //ContactUsPage.submitForm("Joe","Blogs");
+        ContactUsPage.submitForm_UsingRandomdata("Joe","Blogs");
 
         //await browser.debug();
         //await submitButton.click();
