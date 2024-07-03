@@ -88,7 +88,7 @@ describe('webdriveruniversity - contact us page', function() {
     })
 
     it('only type a first name', async () => {
-        ContactUsPage.submitForm("Joe");
+        ContactUsPage.submitForm("Joe","","","");
         await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveTextContaining(['Error: all fields are required',' Error: Invalid email address']);
         
     });
