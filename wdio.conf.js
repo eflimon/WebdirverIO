@@ -29,13 +29,23 @@ exports.config = {
         //'./test/specs/**/wait-commans.spec.js'
         //'./test/specs/**/contact-us.spec.js'
         //'./test/specs/**/advanced-elements-interactions.spec.js'
-        //'./test/specs/**/*.spec.js'
-        './test/specs/**/add-items-to-basket.spec.js'
+        './test/specs/**/*.spec.js'
+        //'./test/specs/**/add-items-to-basket.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
+    suites: {
+        smoke: [
+            'test/specs/automation-test-store/add-items-to-basket.spec.js',
+            'test/specs/webdriver-univeristy/locating-elements.spec.js',
+            'test/specs/webdriver-univeristy/contact-us.spec.js'
+        ],
+       automationteststore: [
+            'test/specs/automation-test-store/add-items-to-basket.spec.js'
+        ]
+    },
     //
     // ============
     // Capabilities
