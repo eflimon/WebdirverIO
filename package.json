@@ -22,7 +22,8 @@
     "@wdio/mocha-framework": "^8.38.2",
     "@wdio/selenium-standalone-service": "^8.15.0",
     "@wdio/spec-reporter": "^8.38.2",
-    "@wdio/visual-service": "^4.1.3"
+    "@wdio/visual-service": "^4.1.3",
+    "wdio-geckodriver-service": "^5.0.2"
   },
   "dependencies": {
     "allure-commandline": "^2.29.0"
