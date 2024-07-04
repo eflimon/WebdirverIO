@@ -10,7 +10,12 @@ describe('webdriveruniversity - contact us page', function() {
 
         //await browser.url('/Contact-Us/contactus.html');
         await ContactUsPage.open();
-        console.log(`>>Browser Object: + ${JSON.stringify(browser)}`);
+        //console.log(`>>Browser Object: + ${JSON.stringify(browser)}`);
+        console.log("CONFIG ENV: " + browser.config.environment);
+        console.log("CONFIG EMAIL: " + browser.config.email);
+        console.log("CONFIG FIRST NAME: " + browser.config.firstName);
+        console.log("CONFIG PASSWORD: " + browser.config.password);
+        console.log("CONFIG BASE URL: " + browser.config.baseUrl);
 
     })
 
