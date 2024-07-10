@@ -11,11 +11,13 @@ describe('webdriveruniversity - contact us page', function() {
         //await browser.url('/Contact-Us/contactus.html');
         await ContactUsPage.open();
         //console.log(`>>Browser Object: + ${JSON.stringify(browser)}`);
-        console.log("CONFIG ENV: " + browser.config.environment);
-        console.log("CONFIG EMAIL: " + browser.config.email);
-        console.log("CONFIG FIRST NAME: " + browser.config.firstName);
-        console.log("CONFIG PASSWORD: " + browser.config.password);
-        console.log("CONFIG BASE URL: " + browser.config.baseUrl);
+        
+        //Lines to run the test in a different environment
+        //console.log("CONFIG ENV: " + browser.config.environment);
+        //console.log("CONFIG EMAIL: " + browser.config.email);
+        //console.log("CONFIG FIRST NAME: " + browser.config.firstName);
+        //console.log("CONFIG PASSWORD: " + browser.config.password);
+        //console.log("CONFIG BASE URL: " + browser.config.baseUrl);
 
     })
 
@@ -45,6 +47,7 @@ describe('webdriveruniversity - contact us page', function() {
 
         //ContactUsPage.submitForm("Joe","Blogs");
         ContactUsPage.submitForm_UsingRandomdata("Joe","Blogs");
+        //ContactUsPage.submitForm_UsingRandomdata(browser.config.firstName,"Blogs");
 
         //await browser.debug();
         //await submitButton.click();

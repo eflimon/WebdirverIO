@@ -43,7 +43,10 @@ exports.config = {
             'test/specs/webdriver-univeristy/contact-us.spec.js'
         ],
        automationteststore: [
-            'test/specs/automation-test-store/add-items-to-basket.spec.js'
+            'test/specs/automation-test-store/*.spec.js'
+        ],
+        webdriveruniversity: [
+            'test/specs/webdriver-univeristy/*.spec.js'
         ]
     },
     //
@@ -69,7 +72,7 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'firefox'
     }],
 
     //
@@ -115,7 +118,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 1,
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -133,7 +136,7 @@ exports.config = {
     
     //
     // The number of times to retry the entire specfile when it fails as a whole
-    specFileRetries: 2,
+    specFileRetries: 1,
     //
     // Delay in seconds between the spec file retry attempts
     // specFileRetriesDelay: 0,

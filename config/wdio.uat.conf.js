@@ -5,5 +5,6 @@ export const config = Object.assign(baseConfig, {
     email: "autotest1@gmail.com",
     firtName: "Sarah",
     password: "pass1",
+    //this url should be another environment URL
     baseUrl: "https://automationteststore.com"
 })
