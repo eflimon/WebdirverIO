@@ -6,11 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js",
-
     "smoke-suite": "npx wdio --suite smoke",
-    
     "automation-test-store-tests": "npx wdio --suite automationteststore",
-    
     "webdriver-university-tests": "npx wdio --suite webdriveruniversity",
     "webdriver-university-tests-uat-env": "npx wdio config/wdio.uat.conf.js --spec test/specs/webdriver-university/contact-us.spec.js"
   },
@@ -31,6 +28,7 @@
   },
   "dependencies": {
     "allure-commandline": "^2.29.0",
+    "chromedriver": "^126.0.4",
     "command-line-interface": "^5.0.0"
   }
 }
