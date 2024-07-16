@@ -64,7 +64,7 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it('invalid submission - don submit all information', async() => {
+    it('invalid submission - do not submit all information', async() => {
 
         allureReporter.addFeature("Constact up page - invalid submission");
         allureReporter.addDescription("Validate constact us page by not submitting all data");
@@ -95,11 +95,53 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it('only type a first name', async () => {
-        ContactUsPage.submitForm("Joe","","","");
-        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveTextContaining(['Error: all fields are required',' Error: Invalid email address']);
-        
+    it('Submit just first name', async () => {
+
+        //await browser.url('/Contact-Us/contactus.html');
+        //const firstNameTextField = $("[name='first_name']");
+    
+        ContactUsPage.submitForm("Dave","","","");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: Invalid email address')
+        );
+        //await firstNameTextField.clearValue();        
     });
 
+    it('Submit just last name', async () => {
+
+        ContactUsPage.submitForm("","Grohl","","");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: Invalid email address')
+        );        
+    });
+
+    it('Submit just message', async () => {
+
+        ContactUsPage.submitForm("","","","Test message");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: Invalid email address')
+        );        
+    });
+
+    it('Submit just email', async () => {
+
+        ContactUsPage.submitForm("","","test@email.com","");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );       
+    });
 
 })

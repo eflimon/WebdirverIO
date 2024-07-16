@@ -1,25 +1,33 @@
+import AllureReporter from "@wdio/allure-reporter";
+import ContactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
+import contactUsPage from "../../pageobjects/webdriver-university/contact-us.page";
+
 describe('advanced element interactions - examples', () => {
 
     it('inputs', async () => {
+        //await browser.url("/Contact-Us/contactus.html");
+        //const firstNameTextField = $("[name='first_name']");
 
-        await browser.url('/Contact-Us/contactus.html');
-        const firstNameTextField = $("[name='first_name']");
+        await contactUsPage.open();
 
-        //You can also use unicode characteers like left arrow or backspaces
+        //You can also use unicode characters like Left arrow or Back spaces:
         //https://w3c.github.io/webdriver/webdriver-spec.html#keyboard-actions
-        //Doesn't clear element before typing
-        //https://webdriverio/docs/api/element/addValue
-
+        //Doesn’t Clear element before typing:
+        //https://webdriver.io/docs/api/element/addValue
         await firstNameTextField.addValue("Add your text here ");
         await firstNameTextField.addValue("My added text");
-        await browser.pause(2000);
+        //await browser.pause(2000);
 
-        await firstNameTextField.setValue("Hello");
-        await browser.pause(2000);
+        //Send a sequence of key strokes to an element (clears element before typing)
+        //Keyword: clears before typing:
+        //https://webdriver.io/docs/api/element/setValue
+        await firstNameTextField.setValue("Hello how are you?");
+        //await browser.pause(2000);
 
+        //Clear a <textarea> or text <input> element’s value:
+        //https://webdriver.io/docs/api/element/clearValue
         await firstNameTextField.clearValue();
-        await browser.pause(2000);
-        
+        //await browser.pause(2000);
     });
 
     it('drop-down', async () => {
