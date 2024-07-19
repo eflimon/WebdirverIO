@@ -64,7 +64,7 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it('invalid submission - do not submit all information', async() => {
+    it('Invalid submission - do not submit all information', async() => {
 
         allureReporter.addFeature("Constact up page - invalid submission");
         allureReporter.addDescription("Validate constact us page by not submitting all data");
@@ -95,7 +95,7 @@ describe('webdriveruniversity - contact us page', function() {
 
     })
 
-    it('Submit just first name', async () => {
+    it('Invalid submission - Submit just first name', async () => {
 
         //await browser.url('/Contact-Us/contactus.html');
         //const firstNameTextField = $("[name='first_name']");
@@ -111,7 +111,7 @@ describe('webdriveruniversity - contact us page', function() {
         //await firstNameTextField.clearValue();        
     });
 
-    it('Submit just last name', async () => {
+    it('Invalid submission - Submit just last name', async () => {
 
         ContactUsPage.submitForm("","Grohl","","");
 
@@ -123,7 +123,7 @@ describe('webdriveruniversity - contact us page', function() {
         );        
     });
 
-    it('Submit just message', async () => {
+    it('Invalid submission - Submit just message', async () => {
 
         ContactUsPage.submitForm("","","","Test message");
 
@@ -135,13 +135,37 @@ describe('webdriveruniversity - contact us page', function() {
         );        
     });
 
-    it('Submit just email', async () => {
+    it('Invalid submission - Submit just email correct format', async () => {
 
         ContactUsPage.submitForm("","","test@email.com","");
 
         await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
             expect.stringContaining('Error: all fields are required')
         );       
+    });
+
+    it('Invalid submission - Submit just email incorrect format', async () => {
+
+        ContactUsPage.submitForm("","","test@emailcom","");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: Invalid email address')
+        );          
+    });
+
+    it('Invalid submission - Click submit with no information typed', async () => {
+
+        ContactUsPage.submitForm("","","","");
+
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: all fields are required')
+        );
+        await expect(ContactUsPage.unsucessfulSubmissionHeader).toHaveText(
+            expect.stringContaining('Error: Invalid email address')
+        );          
     });
 
 })

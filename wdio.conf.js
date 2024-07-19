@@ -27,9 +27,9 @@ exports.config = {
     specs: [
         //'./test/specs/**/locating-elements.spec.js'
         //'./test/specs/**/wait-commans.spec.js'
-        //'./test/specs/**/contact-us.spec.js'
+        './test/specs/**/contact-us.spec.js'
         //'./test/specs/**/advanced-elements-interactions.spec.js'
-        './test/specs/**/*.spec.js'
+        //'./test/specs/**/*.spec.js'
         //'./test/specs/**/add-items-to-basket.spec.js'
     ],
     // Patterns to exclude.
