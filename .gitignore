@@ -1,4 +1,4 @@
 test/specs/__snapshots__
 allure-report
 allure-results
-node-modules
+node_modules
