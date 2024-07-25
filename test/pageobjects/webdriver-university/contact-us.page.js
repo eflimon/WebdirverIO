@@ -26,6 +26,10 @@ class ContactUsPage extends BasePage{
         return $('//input[@value="SUBMIT"]');
     }
 
+    get resetButton(){
+        return $('//input[@value="RESET"]');
+    }
+
     get successfulSubmissionheader() {
         return $('#contact_reply > h1');
     }
@@ -49,6 +53,14 @@ class ContactUsPage extends BasePage{
         await this.inputEmail.setValue("AutoEmail_" + dataGenereator.generateRandomString() + "@gmail.com");
         await this.submitButton.click();
 
+    }
+
+    async resetForm(firstName, LastName, email, message){
+        await this.inputFirstName.setValue(firstName);
+        await this.inputLastName.setValue(LastName);
+        await this.inputMessage.setValue(message);
+        await this.inputEmail.setValue(email);
+        await this.resetButton.click();
     }
 }
 export default new ContactUsPage();

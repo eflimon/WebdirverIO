@@ -168,4 +168,22 @@ describe('webdriveruniversity - contact us page', function() {
         );          
     });
 
+    it.only('Click reset button', async () => {
+
+        ContactUsPage.resetForm("Dave","Grohl","test@test.com","Comment added");
+        await browser.pause(2000);
+        await expect(ContactUsPage.inputFirstName).toHaveText(
+            expect.stringContaining('')
+        );
+        await expect(ContactUsPage.inputLastName).toHaveText(
+            expect.stringContaining('')
+        );
+        await expect(ContactUsPage.inputEmail).toHaveText(
+            expect.stringContaining('')
+        );
+        await expect(ContactUsPage.inputMessage).toHaveText(
+            expect.stringContaining('')
+        );
+    });
+
 })
