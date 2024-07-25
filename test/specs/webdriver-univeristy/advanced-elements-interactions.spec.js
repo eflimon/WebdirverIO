@@ -14,19 +14,22 @@ describe('advanced element interactions - examples', () => {
         //https://w3c.github.io/webdriver/webdriver-spec.html#keyboard-actions
         //Doesn’t Clear element before typing:
         //https://webdriver.io/docs/api/element/addValue
-        await firstNameTextField.addValue("Add your text here ");
-        await firstNameTextField.addValue("My added text");
+        contactUsPage.inputFirstName.addValue("Add your text here ");
+        contactUsPage.inputLastName.addValue("My added text");
+
+        //await firstNameTextField.addValue("Add your text here ");
+        //await firstNameTextField.addValue("My added text");
         //await browser.pause(2000);
 
         //Send a sequence of key strokes to an element (clears element before typing)
         //Keyword: clears before typing:
         //https://webdriver.io/docs/api/element/setValue
-        await firstNameTextField.setValue("Hello how are you?");
+        contactUsPage.inputFirstName.setValue("Hello how are you?");
         //await browser.pause(2000);
 
         //Clear a <textarea> or text <input> element’s value:
         //https://webdriver.io/docs/api/element/clearValue
-        await firstNameTextField.clearValue();
+        contactUsPage.inputFirstName.clearValue();
         //await browser.pause(2000);
     });
 
